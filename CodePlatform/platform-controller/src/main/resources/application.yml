@@ -1,0 +1,26 @@
+server:
+  port: 8089
+
+
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    password: QWEasd123456!
+    url: jdbc:mysql://localhost/shiro-template?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&autoReconnect=true
+    username: root
+    hikari:
+      connection-timeout: 600
+      max-lifetime: 550
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*Mapper.xml
+  type-aliases-package: com.qiaose.entity.*
+
+
+
+
+
+
