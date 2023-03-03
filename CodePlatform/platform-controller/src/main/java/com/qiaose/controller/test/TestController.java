@@ -40,13 +40,11 @@ public class TestController {
 
 
     @GetMapping("/test")
-    @ApiOperation("获取测试")
     public Result<?> test(){
         return Result.success("hello world");
     }
 
     @GetMapping("/test1")
-    @ApiOperation("获取数据库中的测试")
     public Result<?> getTest(){
         return Result.success(testService.getTest());
     }
@@ -72,25 +70,25 @@ public class TestController {
 //        return Result.success(testService.getBaseMapper().deleteById(id));
 //    }
 
-    @PostMapping("/insert")
-    @ApiOperation("插入测试")
-    @Transactional(rollbackFor = {Exception.class})
-    public Result<?> insert(@RequestBody @Valid test t1){
-        return Result.success(testService.save(t1));
-    }
-
-    @PutMapping("/update")
-    @ApiOperation("更新测试")
-    @Transactional(rollbackFor = {Exception.class})
-    public Result<?> update(@RequestBody @Valid test t1){
-        return Result.success(testService.updateById(t1));
-    }
-
-    @DeleteMapping("/delete")
-    @ApiOperation("删除测试")
-    @Transactional(rollbackFor = {Exception.class})
-    public Result<?> delete(@RequestParam @Min(message = "小于5",value = 5) Integer id){
-        return Result.success(testService.removeById(id));
-    }
+//    @PostMapping("/insert")
+//    @ApiOperation("插入测试")
+//    @Transactional(rollbackFor = {Exception.class})
+//    public Result<?> insert(@RequestBody @Valid test t1){
+//        return Result.success(testService.save(t1));
+//    }
+//
+//    @PutMapping("/update")
+//    @ApiOperation("更新测试")
+//    @Transactional(rollbackFor = {Exception.class})
+//    public Result<?> update(@RequestBody @Valid test t1){
+//        return Result.success(testService.updateById(t1));
+//    }
+//
+//    @DeleteMapping("/delete")
+//    @ApiOperation("删除测试")
+//    @Transactional(rollbackFor = {Exception.class})
+//    public Result<?> delete(@RequestParam @Min(message = "小于5",value = 5) Integer id){
+//        return Result.success(testService.removeById(id));
+//    }
 
 }

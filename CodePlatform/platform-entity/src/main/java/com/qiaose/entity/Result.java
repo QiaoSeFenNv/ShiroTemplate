@@ -44,4 +44,18 @@ public class Result<T> {
     public static <T> Result<T> success(int code, String message) {
         return new Result<T>(code, message);
     }
+
+    public static <T> Result<T> success() {
+        Result<T> result = new Result<T>();
+        result.setCode(ResultMsgEnum.SUCCESS.getCode());
+        result.setMessage(ResultMsgEnum.SUCCESS.getMessage());
+
+        return result;
+    }
+    public static <T> Result<T> error() {
+        Result<T> result = new Result<T>();
+        result.setCode(ResultMsgEnum.FAIL.getCode());
+        result.setMessage(ResultMsgEnum.FAIL.getMessage());
+        return result;
+    }
 }

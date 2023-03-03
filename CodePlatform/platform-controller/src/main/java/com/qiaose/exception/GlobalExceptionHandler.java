@@ -35,9 +35,10 @@ public class GlobalExceptionHandler {
      * @param e
      * @return
      */
-    @ExceptionHandler(value =Exception.class)
+    @ExceptionHandler(value = RuntimeException.class)
     @ResponseBody
     public Result<?> exceptionHandler(HttpServletRequest req, Exception e){
+        log.error("{}",e);
         return Result.error(ResultMsgEnum.FAIL.getCode(),e.getMessage());
     }
 
